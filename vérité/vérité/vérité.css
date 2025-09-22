@@ -1,0 +1,204 @@
+
+header{background-color: rgb(124, 153, 153); 
+    color: bisque;
+    padding: 1rem;
+    text-align: center;   
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgb(124, 153, 153);
+  color: white;
+}
+
+li {
+  color: rgb(124, 153, 153);
+}
+
+.logo {
+  height: 90px;
+}
+
+
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; }
+
+/* HEADER FIXE ET RESPONSIVE */
+header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: #222; color: #fff;
+  z-index: 1000;
+}
+header nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem;
+}
+header .logo { font-weight: bold; font-size: 1.2rem; }
+header nav ul {
+  display: flex; gap: 1.5rem;
+  list-style: none;
+}
+header nav ul li a {
+  color: #fff; text-decoration: none;
+  font-weight: bold; transition: color 0.3s;
+}
+header nav ul li a:hover { color: #f4d03f; }
+
+/* Menu burger */
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.menu-toggle span {
+  width: 25px; height: 3px; background: #fff; border-radius: 2px;
+}
+@media (max-width: 768px) {
+  header nav ul {
+    position: absolute; top: 60px; left: 0;
+    width: 100%; background: #222;
+    flex-direction: column; align-items: center;
+    display: none;
+  }
+  header nav ul.active { display: flex; }
+  .menu-toggle { display: flex; }
+}
+
+/* SECTION ACCUEIL */
+#accueil { margin-top: 70px; }
+.slide {
+  position: relative; overflow: hidden;
+}
+.slide img {
+  width: 100%; height: auto;
+  transition: transform 0.7s ease;
+}
+.slide:hover img {
+  transform: scale(1.1); /* ZOOM au survol */
+}
+
+/* TEXTE CENTRÉ SANS ENCADRÉ MAIS LISIBLE */
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  max-width: 90%;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* ombre portée pour la lisibilité */
+}
+.caption h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.caption p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+
+/* FOOTER */
+footer {
+  background: #222; color: #fff; text-align: center;
+  padding: 20px; margin-top: 20px;
+}
+footer img { margin-top: 10px; }
+
+
+#vérité {
+  background: #686666; /* Fond blanc, tu peux changer pour une couleur douce */
+  padding: 80px 20px;
+  margin-top: -50px; /* effet chevauchement "flottant" sous l'image d'accueil */
+  border-radius: 20px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Ombre légère */
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+#vérité h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: rgb(10, 236, 236);
+}
+#vérité p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #f8f4f4;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* Lightbox */
+.lightbox {
+  display: none;              /* cachée par défaut */
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  box-shadow: 0 0 15px #000;
+  border-radius: 8px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.lightbox .close:hover {
+  color: #ccc;
+}
+
+
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  box-shadow: 0 0 15px #000;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* animation douce */
+  cursor: zoom-in; /* curseur initial */
+}
+
+
+
+/* Supprime le halo bleu sur les images cliquées */
+#vérité img {
+  outline: none;       /* pas de contour */
+  border: none;        /* pas de bordure */
+}
+
+#vérité img:focus,
+#vérité img:active {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+
