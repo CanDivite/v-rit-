@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vérité</title>
+  <link rel="stylesheet" href="vérité.css">
+  
+ 
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><img src="v1.png" alt="Logo gauche" class="logo logo-left" /></div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span><span></span><span></span>
+      </div>
+      <ul id="menu">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#vérité">Vérité à Savoir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="accueil">
+      <div class="slide">
+        <img src="v1.png" alt="Photo accueil">
+        <div class="caption">
+          <h1>Bienvenue sur Vérité</h1>
+          <p>Tout ce qui se dit ici n'est que la vérité, rien que la vérité et seulment que la vérité.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="vérité">
+      
+      <br><h2>Vérité à savoir</h2></br>
+      <p>
+        Salut à vous mes info, je suis <strong>Vérité</strong> ! Ma mission : dévoiler les vérités cachées et faire la lumière sur ce qui se passe dans notre belle paroisse.
+        Vous vous demandez peut-être de quelles vérités je parle ? Il s’agit de toutes sortes de réalités souvent ignorées : des comportements qui blessent les autres, des situations qu’on préfère taire, et bien d’autres secrets que nous découvrirons ensemble.
+      </p>
+      <p><br>
+        Si vous connaissez une vérité que vous souhaitez partager, vous pouvez me l’envoyer : votre identité restera confidentielle, ce sera notre petit secret.
+        L’objectif n’est pas de juger, mais de révéler pour mieux avancer, dans un esprit de justice et de vérité.
+      </p></br>
+      <p><br>
+        Commençons fort, car le tout premier secret que je compte dévoiler est celui de KOUASSI CHRIST MAGLOIRE, enfant de chœur et fils de l’ex-berger du Renouveau Charismatique de notre paroisse Saint François Xavier d’Abobo. Vous pensez tous que c’est un saint, mais c’est le plus « chien », le plus bandit, le plus chercheur de femmes et le plus briseur de cœurs des servants de messe que vous connaissez. Regardez les méssages vous-mêmes :
+      </p></br>
+       <img src="MCK.jpeg" width="300" height="300">   <img src="1.jpeg" width="300" height="300">  <img src="2.jpeg" width="300" height="300">  <img src="3.jpeg" width="300" height="300">  <img src="4.jpeg" width="300" height="300">  <img src="5.jpeg" width="300" height="300">
+      <p>
+        Il a géré avec exactement 5 filles sur la paroisse ; je ne connais pas encore leurs noms, mais ça ne va pas tarder et vous serez les premiers à le découvrir.
+      </p>  
+      <p>
+        Mais en attendant, les prochains sur la liste sont ses amis Christ Dylan Kouassi, Yvann Samuel Baleba et Michel Sapho, car c’est le groupe le plus dangereux de la paroisse et il y a beaucoup de secrets sur eux.
+      </p>
+      <p>
+        Restez connectés, car de nombreuses révélations arrivent bientôt !
+      </p></br>
+      <br><p>
+        bazarof j'ai bougé.
+      </p></br>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vérité</p>
+    <a href="https://wa.me/0502642907" target="_blank" title="WhatsApp">
+      <img src="Whatsapp.jpeg" alt="WhatsApp" width="80" height="80">
+    </a>
+  </footer>
+
+
+
+        <!-- lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+
+ <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  const menuLinks = document.querySelectorAll('#menu a'); // Tous les liens du menu
+
+  if (menuToggle && menu) {
+    // Ouvrir / fermer le menu au clic sur hamburger
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+
+// Sélectionner toutes les images de ton article
+const images = document.querySelectorAll('#vérité img');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'block';
+    lightboxImg.src = img.src;
+  });
+});
+
+// Fermer en cliquant sur la croix
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+// Fermer en cliquant en dehors de l'image
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
+
+
+// --- Zoom dans la lightbox ---
+let zoomed = false;
+
+lightboxImg.addEventListener('click', () => {
+  zoomed = !zoomed;
+  if (zoomed) {
+    lightboxImg.style.transform = 'scale(2)'; /* zoom 2x */
+    lightboxImg.style.cursor = 'zoom-out';
+  } else {
+    lightboxImg.style.transform = 'scale(1)';
+    lightboxImg.style.cursor = 'zoom-in';
+  }
+});
+</script>
+
+</body>
+</html>
